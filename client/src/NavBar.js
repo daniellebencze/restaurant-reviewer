@@ -1,23 +1,14 @@
 import React from "react";
+import { NavLink, Routes, Route } from "react-router-dom";
 
-function NavBar({ onChangePage }) {
+
+function NavBar() {
   
-    function handleLinkClick(e) {
-    e.preventDefault();
-    onChangePage(e.target.pathname);
-  }
-
   return (
     <nav className="navbar">
-      <a onClick={handleLinkClick} href="/">
-        Login Screen
-      </a>
-      <a onClick={handleLinkClick} href="/restaurants">
-        All Restaurants
-      </a>
-      <a onClick={handleLinkClick} href="/favorites">
-        My Favorite Restaurants
-      </a>
+        <NavLink to="/login">LogIn</NavLink>
+        <NavLink to="/restaurants">Restaurants</NavLink>
+        <NavLink to="/favorites">Favorites</NavLink>
     </nav>
   );
 }
