@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react";
 
 function LoginScreen() {
-
   return (
     <div>
-      <form 
-    //   onSubmit={handleSubmit}
-    >
+      <form
+      //   onSubmit={handleSubmit}
+      >
         <div className="form-name">
           <span>Login to view restaurants!</span>
         </div>
-        <br/>
+        <br />
         <div>
           <input
+            className="login-form"
             type="text"
             name="username"
             placeholder="Username:"
@@ -21,6 +21,7 @@ function LoginScreen() {
         </div>
         <div>
           <input
+            className="login-form"
             type="text"
             name="password"
             placeholder="Pasword:"
@@ -29,15 +30,13 @@ function LoginScreen() {
         </div>
       </form>
       <input
+        className="login-button"
         type="submit"
         value="Login!"
         //   onSubmit={handleSubmit}
       />
-     </div>
+    </div>
   );
 }
 
-export default LoginScreen
-
-
-
+export default LoginScreen;
