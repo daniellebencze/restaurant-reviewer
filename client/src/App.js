@@ -1,31 +1,20 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import LoginScreen from "./LoginScreen";
 import RestaurantContainer from "./RestaurantContainer";
-import NavBar from "./NavBar";
 import Favorites from "./Favorites";
+import NavBar from "./NavBar";
 
 function App() {
-  const [page, setPage] = useState("/");
-
-  function getCurrentPage() {
-    switch (page) {
-      case "/":
-        return <LoginScreen />;
-      case "/restaurants":
-        return <RestaurantContainer />;
-      case "/favorites":
-        return <Favorites />;
-      default:
-        return <h1>404 not found</h1>;
-    }
-  }
 
   return (
     <div className="App">
-      <NavBar onChangePage={setPage} />
-      {getCurrentPage()}
+      <NavBar/>
+      <Routes>
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/restaurants" element={<RestaurantContainer />} />
+        <Route path="/favorites" element={<Favorites />} />
+      </Routes>
     </div>
   );
 }
