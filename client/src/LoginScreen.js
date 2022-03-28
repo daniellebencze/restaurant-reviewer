@@ -2,7 +2,7 @@ import React from "react";
 
 function LoginScreen() {
   return (
-    <div>
+    <div className="login">
       <form
       //   onSubmit={handleSubmit}
       >
