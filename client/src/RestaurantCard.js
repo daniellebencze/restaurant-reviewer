@@ -1,30 +1,31 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 
-function RestaurantCard(restaurant) {
-    const [favorited, setFavorited] = useState(true);
+function RestaurantCard({ restaurant }) {
+  const [favorited, setFavorited] = useState(true);
 
-    const toggleOut = () => {
-        setFavorited(!favorited) 
-      }
-  
-    return (
-        <div>
-            <li className="card">      
-        <img src={restaurant.image} alt={"restaurant name"} />   
-        <h4>{restaurant.name}</h4> 
-        <h4>{restaurant.address}</h4>
-        
+  const toggleOut = () => {
+    setFavorited(!favorited);
+  };
+
+  return (
+    <div>
+      <div className="card">
+        <img src={restaurant.photograph} alt={restaurant.name} />
+        <h3>{restaurant.name}</h3>
+        <h5>{restaurant.address}</h5>
+
         {favorited ? (
-            <button onClick = {toggleOut} className="primary">Like</button>
+          <button onClick={toggleOut} className="like_button">
+            Like
+          </button>
         ) : (
-            <button onClick = {toggleOut}>Dislike</button>
+          <button onClick={toggleOut} className="like_button">
+            Dislike
+          </button>
         )}
-        </li>
+      </div>
     </div>
-  )
+  );
 }
 
-export default RestaurantCard
-
-
-
+export default RestaurantCard;

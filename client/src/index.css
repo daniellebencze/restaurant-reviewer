@@ -66,18 +66,52 @@ nav a.active {
   margin-top: 10px;
   margin-right: 25%;
   margin-left: 25%;
-  background-color: black;
   color: white;
 }
 
 .login-form {
   padding: 10px;
-  margin: 10px;
   background-color: beige;
+  height: 100%;
+  margin: 10px;
 }
 
 .login-button {
   padding: 10px;
-  margin: 10px;
+  margin-bottom: 50%;
   background-color: #e9ddd4;
+}
+
+.card {
+  background-color: white;
+  border: black solid 2px;
+  max-height: 300px;
+  color: rgb(146, 4, 4);
+  padding: 2cm;
+  margin: 1cm;
+  font-size: medium;
+  /* border: 10cm; */
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  grid-auto-rows: minmax(100px, auto);
+  /* padding: 1rem; */
+  /* margin-bottom: 1rem; */
+  font-size: 2rem;
+  position: relative;
+}
+
+.like_button {
+  background-color: white;
+  margin-bottom: 2cm;
+  font-size: medium;
+}
+
+.like_button:hover {
+  background-color: whitesmoke;
+  border: black solid 2px;
+  color: black;
 }

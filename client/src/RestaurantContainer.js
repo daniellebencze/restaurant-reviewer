@@ -7,11 +7,11 @@ function RestaurantContainer() {
 
   const [reviews, setReviews] = useState([]);
 
-  //   useEffect(() => {
-  //     fetch("")
-  //       .then((response) => response.json())
-  //       .then(setRestaurants);
-  //   }, []);
+  useEffect(() => {
+    fetch("/restaurants")
+      .then((r) => r.json())
+      .then(setRestaurants);
+  }, []);
 
   return (
     <div>
