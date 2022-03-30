@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FavoriteCards from "./FavoriteCards";
 
-function RestaurantCard({ restaurant, review }) {
+function RestaurantCard({ restaurants, restaurant, setRestaurants }) {
   const [favorited, setFavorited] = useState(true);
 
   function handleFavoriteButtton(e) {
@@ -14,9 +14,12 @@ function RestaurantCard({ restaurant, review }) {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(restaurant),
-    }).then(() => {});
+      body: JSON.stringify({ 
+          restaurant_id: restaurant.id}),
+    }).then((r) => r.json());
     console.log(restaurant);
+    // setRestaurants([...restaurants, restaurant]);
+    // e.target.reset();
   }
 
   return (
