@@ -11,6 +11,11 @@ class ReviewsController < ApplicationController
         render json: review
     end
 
+    def create
+        review = Review.create!(review_params)
+        render json: review, status: :created
+    end
+
     def destroy
         review = Review.find(params[:id]).destroy
         head :no_content
@@ -22,5 +27,8 @@ class ReviewsController < ApplicationController
         render json: {"error": "Review not found"}, status: :not_found
     end
 
+    def review_params
+        params.permit(:comment, :user_id, :restaurant_id)
+    end
 
 end
