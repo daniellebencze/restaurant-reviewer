@@ -80,3 +80,8 @@ Review.create ([
   ]
 )
 
+Favorite.create({
+    "name": "Dynasty Chinese Food",
+    "photograph": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjIU5rBQnvl-F5579XsHBhy1dF_O37MDhAfA&usqp=CAU",
+    "address": "171 E Broadway, New York, NY 10002"
+  })

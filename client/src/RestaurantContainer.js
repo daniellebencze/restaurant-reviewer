@@ -13,11 +13,15 @@ function RestaurantContainer() {
       .then(setRestaurants);
   }, []);
 
+
   return (
     <div>
       <ul className="cards">
         {restaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+          <RestaurantCard
+            key={restaurant.id}
+            restaurant={restaurant}
+          />
         ))}
       </ul>
       {/* Testing out review card */}
