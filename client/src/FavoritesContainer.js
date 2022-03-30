@@ -3,7 +3,7 @@ import FavoriteCards from "./FavoriteCards";
 
 function FavoritesContainer() {
   const [getFavorited, setGetFavorited] = useState([]);
-
+  console.log(getFavorited);
   useEffect(() => {
     fetch("/favorites")
       .then((r) => r.json())
@@ -14,8 +14,8 @@ function FavoritesContainer() {
   return (
     <div>
       <div>
-        {getFavorited.map((getFavorited) => (
-          <FavoriteCards key={getFavorited.id} getFavorited={getFavorited} />
+        {getFavorited.map((favorite) => (
+          <FavoriteCards key={favorite.id} getFavorited={favorite.restaurant} />
         ))}
       </div>
     </div>

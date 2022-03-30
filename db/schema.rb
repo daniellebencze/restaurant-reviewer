@@ -16,18 +16,16 @@ ActiveRecord::Schema.define(version: 2022_03_29_160231) do
   enable_extension "plpgsql"
 
   create_table "favorites", force: :cascade do |t|
-    t.string "photograph"
-    t.string "name"
-    t.string "address"
+    t.bigint "restaurant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_favorites_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
     t.string "photograph"
     t.string "name"
     t.string "address"
-    t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,11 +33,9 @@ ActiveRecord::Schema.define(version: 2022_03_29_160231) do
   create_table "reviews", force: :cascade do |t|
     t.string "comment"
     t.bigint "restaurant_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,6 +45,6 @@ ActiveRecord::Schema.define(version: 2022_03_29_160231) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "favorites", "restaurants"
   add_foreign_key "reviews", "restaurants"
-  add_foreign_key "reviews", "users"
 end
