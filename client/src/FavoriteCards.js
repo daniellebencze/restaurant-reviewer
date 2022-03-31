@@ -1,25 +1,25 @@
 import React from "react";
 
 function FavoriteCards({ getFavorited, favoriteId }) {
+  const handleDelete = (e) => {
+    e.preventDefault();
 
-  const handleDelete = e => {
-      e.preventDefault()
-  
     fetch(`favorites/${favoriteId}`, {
-      method: 'DELETE',
-    })
-}
-
+      method: "DELETE",
+    });
+  };
 
   return (
-      <div className="card">
+    <div className="favorite_container">
+      <div className="favorite_cards">
         <img src={getFavorited.photograph} alt={getFavorited.name} />
         <h3>{getFavorited.name}</h3>
         <h5>{getFavorited.address}</h5>
-        <button onClick={handleDelete} className="emoji-button delete">
+        <button onClick={handleDelete} className="emoji-button-delete">
           🗑
         </button>
       </div>
+    </div>
   );
 }
 
