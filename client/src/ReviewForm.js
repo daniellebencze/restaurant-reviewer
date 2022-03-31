@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function ReviewForm() {
+function ReviewForm({review, restaurantId}) {
   const [comment, setComment] = useState("");
   const [name, setName] = useState("");
 
@@ -8,7 +8,7 @@ function ReviewForm() {
     e.preventDefault();
 
     const newReview = {
-      // name,
+      name,
       comment,
     };
 
@@ -20,7 +20,9 @@ function ReviewForm() {
     console.log(newReview);
   };
 
+
   return (
+
     <div className="review_form">
       <h2>Add A New Review</h2>
       <form onSubmit={handleSubmit}>

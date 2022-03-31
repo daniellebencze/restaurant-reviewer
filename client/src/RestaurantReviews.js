@@ -13,12 +13,11 @@ function RestaurantReviews() {
 
   console.log(reviews);
 
-  
   return (
     <div>
       <ReviewForm/>
       {reviews.map((review) => (
-        <ReviewCard key = {review.id} review = {review}/>
+        <ReviewCard key = {review.id} review = {review} />
       ))}
     </div>
   );

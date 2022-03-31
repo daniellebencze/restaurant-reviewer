@@ -25,3 +25,13 @@ function FavoriteCards({ getFavorited, favoriteId, setGetFavorited }) {
 }
 
 export default FavoriteCards;
+
+
+
+//       setGetFavorited((getFavorited) => (
+//        getFavorited.filter((e) => {
+//          e.id !== favoriteId;
+//        }
+//     )
+      
+// ))
