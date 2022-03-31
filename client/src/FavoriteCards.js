@@ -1,13 +1,14 @@
 import React from "react";
 
-function FavoriteCards({ getFavorited, favoriteId }) {
-  const handleDelete = (e) => {
-    e.preventDefault();
-
+function FavoriteCards({ getFavorited, favoriteId, setGetFavorited }) {
+  function handleDelete() {
     fetch(`favorites/${favoriteId}`, {
       method: "DELETE",
     });
-  };
+    setGetFavorited((getFavorited) => {
+      getFavorited.filter((e) => e.id !== favoriteId);
+    });
+  }
 
   return (
     <div className="favorite_container">
