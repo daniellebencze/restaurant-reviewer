@@ -24,7 +24,7 @@ function RestaurantContainer() {
           />
         ))}
       </ul>
-      </div>
+    </div>
   );
 }
 
