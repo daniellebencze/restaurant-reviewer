@@ -15,7 +15,7 @@ function FavoritesContainer() {
     <div>
       <div>
         {getFavorited.map((favorite) => (
-          <FavoriteCards key={favorite.id} getFavorited={favorite.restaurant} />
+          <FavoriteCards key={favorite.id} getFavorited={favorite.restaurant} favoriteId = {favorite.id}/>
         ))}
       </div>
     </div>

@@ -10,6 +10,11 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
         render json: favorite, status: :created
     end
 
+    def destroy
+        favorite = Favorite.find(params[:id]).destroy
+        head :no_content
+    end
+
     private 
 
     def render_invalid(invalid)

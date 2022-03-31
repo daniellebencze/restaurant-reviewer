@@ -6,6 +6,7 @@ import RestaurantContainer from "./RestaurantContainer";
 import NavBar from "./NavBar";
 import Homepage from "./Homepage";
 import FavoritesContainer from "./FavoritesContainer";
+import RestaurantReviews from "./RestaurantReviews";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/restaurants" element={<RestaurantContainer />} />
         <Route path="/favorites" element={<FavoritesContainer />} />
+        <Route path="/reviews" element={<RestaurantReviews />} />
       </Routes>
     </div>
   );

@@ -84,14 +84,16 @@ nav a.active {
 
 .card {
   background-color: white;
-  border: black solid 2px;
+  border: black solid 5px;
   max-height: 300px;
   color: rgb(146, 4, 4);
   padding: 2cm;
   margin: 1cm;
   font-size: medium;
-  /* border: 10cm; */
-}
+  border: 10cm; 
+ }
+
+ 
 
 .cards {
   margin-top: 10px;

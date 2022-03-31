@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
-import RestaurantReviews from "./RestaurantReviews";
 
 function RestaurantContainer() {
   const [restaurants, setRestaurants] = useState([]);
@@ -25,7 +24,6 @@ function RestaurantContainer() {
           />
         ))}
       </ul>
-        <RestaurantReviews />
       </div>
   );
 }
