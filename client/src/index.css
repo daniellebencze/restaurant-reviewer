@@ -93,6 +93,26 @@ nav a.active {
   border: 10cm;
 }
 
+.review_form {
+  background-color: black;
+  color: white;
+  margin-top: 0.5cm;
+  margin-bottom: 0.5cm;
+  padding: 0.25cm;
+}
+
+.review_card {
+  /* background-color: white; */
+  background-color: rgba(128, 128, 128, 0.193);
+  border: black solid 5px;
+  max-height: 300px;
+  color: rgb(146, 4, 4);
+  padding: 2cm;
+  margin: 1cm;
+  font-size: medium;
+  border: 10cm;
+}
+
 .cards {
   margin-top: 10px;
   display: grid;
@@ -116,11 +136,8 @@ nav a.active {
 .favorite_container {
   background-image: url(https://images.unsplash.com/photo-1483232539664-d89822fb5d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG8lMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&w=1000&q=80);
   background-size: cover;
-  /* background-repeat: no-repeat; */
   display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
   position: center;
-  /* grid-template-columns: 1fr 1fr 1fr; */
 }
 
 .favorite_cards {
@@ -145,7 +162,7 @@ nav a.active {
 }
 
 .like_button:hover {
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.463);
   border: black solid 2px;
   color: black;
 }
