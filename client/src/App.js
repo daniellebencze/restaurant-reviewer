@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginScreen from "./LoginScreen";
 import RestaurantContainer from "./RestaurantContainer";
@@ -9,6 +9,15 @@ import FavoritesContainer from "./FavoritesContainer";
 import RestaurantReviews from "./RestaurantReviews";
 
 function App() {
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    fetch("/restaurants")
+      .then((r) => r.json())
+      .then(setRestaurants);
+  }, []);
+
+  console.log(restaurants);
 
   return (
     <div className="App">
@@ -16,9 +25,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<LoginScreen />} />
-        <Route path="/restaurants" element={<RestaurantContainer />} />
+        <Route path="/restaurants" element={<RestaurantContainer restaurants ={restaurants} />} />
         <Route path="/favorites" element={<FavoritesContainer />} />
-        <Route path="/reviews" element={<RestaurantReviews />} />
+        {/* <Route path="/reviews" element={
+          restaurants.map((restaurant) =>(
+        <RestaurantReviews key={restaurant.id} restaurant={restaurant} />
+        ))
+        } /> */}
+        <Route path="/reviews" element={<RestaurantReviews restaurants = {restaurants} />} />
+
       </Routes>
     </div>
   );

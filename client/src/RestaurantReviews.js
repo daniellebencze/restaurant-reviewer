@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReviewCard from "./ReviewCard";
 import ReviewForm from "./ReviewForm";
 
-function RestaurantReviews() {
+function RestaurantReviews({restaurants}) {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -15,7 +15,10 @@ function RestaurantReviews() {
 
   return (
     <div>
-      <ReviewForm/>
+      {/* {restaurants.map((restaurant) => (
+        <ReviewForm key = {restaurant.id} restaurant = {restaurant} />
+      ))} */}
+      <ReviewForm restaurants = {restaurants} />
       {reviews.map((review) => (
         <ReviewCard key = {review.id} review = {review} />
       ))}

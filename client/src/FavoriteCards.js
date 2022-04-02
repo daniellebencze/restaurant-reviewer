@@ -6,7 +6,7 @@ function FavoriteCards({ getFavorited, favoriteId, setGetFavorited }) {
       method: "DELETE",
     });
     setGetFavorited((getFavorited) => {
-      getFavorited.filter((e) => e.id !== favoriteId);
+     return getFavorited.filter((e) => e.id !== favoriteId)
     });
   }
 

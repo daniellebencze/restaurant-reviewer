@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 
-function RestaurantContainer() {
-  const [restaurants, setRestaurants] = useState([]);
+function RestaurantContainer({restaurants}) {
+  // const [restaurants, setRestaurants] = useState([]);
 
-  useEffect(() => {
-    fetch("/restaurants")
-      .then((r) => r.json())
-      .then(setRestaurants);
-  }, []);
+  // useEffect(() => {
+  //   fetch("/restaurants")
+  //     .then((r) => r.json())
+  //     .then(setRestaurants);
+  // }, []);
 
-  console.log(restaurants);
+  // console.log(restaurants);
 
   return (
     <div>
@@ -19,7 +19,6 @@ function RestaurantContainer() {
           <RestaurantCard
             key={restaurant.id}
             restaurant={restaurant}
-            setRestaurants={setRestaurants}
             restaurants={restaurants}
           />
         ))}
